@@ -1,7 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { getLuckyWheelDetail } from '@src/store/slice/activity';
-import { NavigationProp, ParamListBase } from '@react-navigation/native';
+import { ParamListBase } from '@react-navigation/native';
 import { View, StyleSheet, ScrollView } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import RewardModalComponent from './components/RewardModal';
 import React, { useEffect, useState } from 'react';
 import WheelComponent from './components/Wheel';
@@ -10,7 +12,7 @@ import global from '@src/common/styles';
 /**
  * 幸运大转盘
  */
-export default function LuckyWheelScreen({ route }: { route: any; navigation: NavigationProp<ParamListBase> }) {
+export default function LuckyWheelScreen({ route, navigation }: { route: any; navigation: NativeStackNavigationProp<ParamListBase> }) {
   const dispatch = useDispatch(); // 派发方法
   const { activityId } = route.params; // 活动ID
   const [rewardModalVisible, setRewardModalVisible] = useState(false); // 奖品弹窗显示状态
@@ -26,7 +28,7 @@ export default function LuckyWheelScreen({ route }: { route: any; navigation: Na
     if (currentPrize.uuid) {
       setRewardModalVisible(true); // 设置奖品弹窗显示状态为可见
     }
-  }, [currentPrize]);
+  }, [currentPrize, navigation]);
 
   return (
     <ScrollView>

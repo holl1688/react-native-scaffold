@@ -74,6 +74,7 @@ export default function TabBarScreen() {
   return (
     <Tab.Navigator
       id="RootNavigator"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: colors.text, // 选中的标签的颜色
         tabBarInactiveTintColor: colors.blurText, // 未选中的标签的颜色
