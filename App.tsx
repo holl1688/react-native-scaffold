@@ -1,4 +1,5 @@
 import { ThemeContext } from '@src/theme';
+import { useNavigator } from '@src/router';
 import { CustomTheme } from '@src/type/theme';
 import { defaultTheme } from '@src/theme/modules/default';
 import { StatusBar, TouchableOpacity } from 'react-native';
@@ -12,7 +13,6 @@ import SvgRecord from '@res/svg/record.svg';
 import MainScreen from '@src/screen/main';
 import styles from '@src/common/styles';
 import './src/i18n';
-import { useNavigator } from '@src/router';
 
 // 创建栈导航组件
 const Stack = createNativeStackNavigator();
